@@ -4,7 +4,7 @@ A simple webpage that automatically redirects users to the appropriate app store
 
 ## How it works
 
-- **iOS devices** (iPhone, iPad, iPod) → Redirects to App Store
+- **Apple devices** (iPhone, iPad, iPod, MacOS, Apple Vision Pro) → Redirects to App Store
 - **Android devices** → Redirects to Google Play Store  
 - **All other devices** (Desktop, etc.) → Redirects to GitHub
 
