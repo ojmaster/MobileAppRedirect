@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h2>Redirecting to app...</h2>
+        <p>Detecting your device and redirecting you to the appropriate store.</p>
+        <p><small>If you're not redirected automatically, <a href="#" id="fallback-link" style="color: #ffeb3b;">click here</a>.</small></p>
+    </div>
+
+    <script>
+        // Configuration - Replace these URLs with your actual links
+        const APP_STORE_URL = 'https://apps.apple.com/us/app/streamyfin/id6593660679?l=en-GB';  // Replace with your iOS App Store link
+        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fredrikburmester.streamyfin';  // Replace with your Google Play Store link
+        const GITHUB_URL = 'https://github.com/streamyfin/streamyfin?tab=readme-ov-file#-get-it-now';  // Replace with your GitHub link
+
+        function detectDeviceAndRedirect() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Check if iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = APP_STORE_URL;
+                document.getElementById('fallback-link').href = APP_STORE_URL;
+                return;
+            }
+            
+            // Check if Android
+            if (/android/i.test(userAgent)) {
+                window.location.href = PLAY_STORE_URL;
+                document.getElementById('fallback-link').href = PLAY_STORE_URL;
+                return;
+            }
+            
+            // All other devices (desktop, etc.)
+            window.location.href = GITHUB_URL;
+            document.getElementById('fallback-link').href = GITHUB_URL;
+        }
+
+        // Start redirect after a short delay to show the loading screen (Optional - Uncomment if needed)
+        // setTimeout(detectDeviceAndRedirect, 1500);
+        detectDeviceAndRedirect();
+    </script>
+</body>
+</html>
