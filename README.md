@@ -10,8 +10,9 @@ A simple webpage that automatically redirects users to the appropriate app store
 
 ## Setup Instructions
 
-1. Open `index.html` in a text editor
-2. Replace the placeholder URLs in the JavaScript section:
+1. Clone the repository
+2. Open `index.html` in a text editor
+3. Replace the placeholder URLs in the JavaScript section:
 
 ```javascript
 const APP_STORE_URL = 'https://apps.apple.com/app/your-app-id';  // Your iOS App Store link
@@ -19,8 +20,8 @@ const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=your.packa
 const GITHUB_URL = 'https://github.com/yourusername/yourrepo';  // Your GitHub link
 ```
 
-3. Save the file
-4. Upload to your web hosting service or GitHub Pages
+4. Save the file
+5. Upload to your web hosting service or GitHub Pages
 
 ## Features
 
