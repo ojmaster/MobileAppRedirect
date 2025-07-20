@@ -47,15 +47,15 @@
 
     <script>
         // Configuration - Replace these URLs with your actual links
-        const APP_STORE_URL = 'https://apps.apple.com/us/app/streamyfin/id6593660679?l=en-GB';  // Replace with your iOS App Store link
-        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fredrikburmester.streamyfin';  // Replace with your Google Play Store link
-        const FALLBACK_URL = 'https://github.com/streamyfin/streamyfin?tab=readme-ov-file#-get-it-now';  // Replace with your Fallback link
+        const APP_STORE_URL = 'https://apps.apple.com/app/your-app-id';  // App Store link (iOS, macOS, Apple Vision Pro)
+        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=your.package.name';  // Your Google Play Store link
+        const FALLBACK_URL = 'https://github.com/yourusername/yourrepo';  // Your Fallback link
 
         function detectDeviceAndRedirect() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
-            // Check if iOS
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // Check if Apple device (iOS, macOS, Apple Vision Pro)
+            if (/iPad|iPhone|iPod|Macintosh|Mac OS X|Vision/.test(userAgent) && !window.MSStream) {
                 window.location.href = APP_STORE_URL;
                 document.getElementById('fallback-link').href = APP_STORE_URL;
                 return;
