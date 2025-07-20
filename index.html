@@ -49,7 +49,7 @@
         // Configuration - Replace these URLs with your actual links
         const APP_STORE_URL = 'https://apps.apple.com/us/app/streamyfin/id6593660679?l=en-GB';  // Replace with your iOS App Store link
         const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.fredrikburmester.streamyfin';  // Replace with your Google Play Store link
-        const GITHUB_URL = 'https://github.com/streamyfin/streamyfin?tab=readme-ov-file#-get-it-now';  // Replace with your GitHub link
+        const FALLBACK_URL = 'https://github.com/streamyfin/streamyfin?tab=readme-ov-file#-get-it-now';  // Replace with your Fallback link
 
         function detectDeviceAndRedirect() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -69,8 +69,8 @@
             }
             
             // All other devices (desktop, etc.)
-            window.location.href = GITHUB_URL;
-            document.getElementById('fallback-link').href = GITHUB_URL;
+            window.location.href = FALLBACK_URL;
+            document.getElementById('fallback-link').href = FALLBACK_URL;
         }
 
         // Start redirect after a short delay to show the loading screen (Optional - Uncomment if needed)

@@ -17,7 +17,7 @@ A simple webpage that automatically redirects users to the appropriate app store
 ```javascript
 const APP_STORE_URL = 'https://apps.apple.com/app/your-app-id';  // Your iOS App Store link
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=your.package.name';  // Your Google Play Store link
-const GITHUB_URL = 'https://github.com/yourusername/yourrepo';  // Your GitHub link
+const FALLBACK_URL = 'https://github.com/yourusername/yourrepo';  // Your Fallback link
 ```
 
 4. Save the file
